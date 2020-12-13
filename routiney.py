@@ -29,6 +29,9 @@ async def on_ready():
     if total==0:
         return
     for i in range(0, total):
+        f=open('list.txt','r')
+        f=f.read()
+        f=f.split()
         chd=int(f[i])
         channel = c.get_channel(chd)
         if channel==None:
@@ -36,8 +39,8 @@ async def on_ready():
         for post in get_posts('officialroutineofnepalbanda', pages=1):
             fl('r.txt')
             time=str(post['time'])
-            f = open("r.txt", "r")
-            prev=f.read()
+            fi = open("r.txt", "r")
+            prev=fi.read()
             old=re.search(time, prev)
             if old==None: 
                 if post['image']==None:
@@ -54,10 +57,10 @@ async def on_ready():
                     e = discord.Embed()
                     e.set_image(url=str(post['image']))
                     await channel.send(embed=e)
-                last=str(post['time'])
-                f = open("r.txt", "a")
-                f.write(last)
-                f.close()                
+        last=str(post['time'])
+        f = open("r.txt", "a")
+        f.write(last)
+        f.close()                
 
 
 
