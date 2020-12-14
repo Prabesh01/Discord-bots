@@ -57,11 +57,17 @@ async def on_ready():
                     e = discord.Embed()
                     e.set_image(url=str(post['image']))
                     await channel.send(embed=e)
-        last=str(post['time'])
-        f = open("r.txt", "a")
-        f.write(last)
-        f.close()                
-
+            last=str(post['time'])
+            f = open("bott.txt", "a")
+            f.write(last)
+            f.close()   
+    fl('bott.txt')
+    f = open("bott.txt", "r")
+    last = f.read()
+    fk =open("bot.txt", "a")
+    fk.write(last)
+    f.close()
+    os.remove("bott.txt")      
 
 
 @c.event
