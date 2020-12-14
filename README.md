@@ -15,5 +15,7 @@
 
 ###### Steps
 - Replace bot token in .env file
-- To serve the bot, keep reoutiney.py running in backgroung and keep hook.py in cronjob (crontab -e) as: <br>
+- To serve the bot, keep routiney.py running in backgroung using<br>
+```nohup python3 routiey.py &``` <br>
+and keep hook.py in cronjob (crontab -e) as: <br>
 ```* * * * * python3 hook.py```
