@@ -2,7 +2,7 @@
 _Just keep your bot token in .env file and run any of the scripts to get started_
 
 ### notice.py
-- Send notice to all the channels to all the channel that has subscribed to our bot. (hook.txt, which contains the list of webhooks of the channels, must be in same directory as notice.py)
+- Send notice to all the channels that has subscribed to our bot. (hook.txt, which contains the list of webhooks of the channels, must be in same directory as notice.py)
 
 ### monitor.py
 - This scripts show how many guilds your bot is in, along with the guild name and guild id 
