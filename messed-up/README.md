@@ -1,3 +1,5 @@
+# Ignore this directory. These are the scripts I tried, which works fine but is all messedup and isn't trustworthy.
+
 #### routiney.py
 
 ##### Usage
