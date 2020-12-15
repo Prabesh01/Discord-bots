@@ -13,6 +13,8 @@ async def on_ready():
 
 @c.event
 async def on_message(message):
+    if message.author == c.user:
+        return  
     print('Sender: '+str(message.author))
     clts = message.channel.id
     channel = c.get_channel(clts)
