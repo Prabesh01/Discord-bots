@@ -1,4 +1,4 @@
-### __routiney.py + hook.py + .env__
+## __routiney.py + hook.py + .env__
 
 - routiney.py: Keeps the bot online 24/7, replies to pre-defined commands, subscribes and unsubscribe channels. Preferred to keep this script running in background.
 - hook.py: scrape latest posts from the page and send to the wehooks collected by routiney.py. Preferred to keep this script in cron job to run in every x minutes.
