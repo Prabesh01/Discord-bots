@@ -1,4 +1,5 @@
-# Ignore this directory. These are the scripts I tried, which works fine but is all messedup and isn't trustworthy.
+# Ignore this directory. These are the scripts I tried, which works fine but is all messed up and isn't trustworthy.
+_You can see this code for reference on how not to code a bot_
 
 #### routiney.py
 
@@ -12,6 +13,7 @@
 
 ###### Dependencies
 ```pip install discord.py```<br>
+```pip install discord_webhook```<br>
 ```pip install -U python-dotenv``` <br>
 ```pip install facebook_scraper```<br>
 
