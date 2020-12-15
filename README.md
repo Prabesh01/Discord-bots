@@ -2,7 +2,7 @@
 
 - routiney.py: Keeps the bot online 24/7, replies to pre-defined commands, subscribes and unsubscribe channels. Preferred to keep this script running in background.
 - hook.py: scrape latest posts from the page and send to the wehooks collected by routiney.py. Preferred to keep this script in cron job to run in every x minutes.
-- ..env: just for bot authorization
+- .env: just for bot authorization
 
 ##### Usage
 - Invite the bot to your server (guild) from [here](https://discord.com/api/oauth2/authorize?client_id=786534057437691914&permissions=8&scope=bot)
