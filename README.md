@@ -25,4 +25,4 @@
 and keep hook.py in cronjob (crontab -e) as: <br>
 ```* * * * * python3 hook.py```
 
-_I would suggest to keep all files in home direstory rather than other 'cause when a script is running through crontab, it runs from home directory; means all its required files and output file should be in home directory for it to fuction without any problem. If you added the script to crontab with root accout, the script will run from /root directory._
+_I would suggest to keep all files in home directory rather than other because when a script is running through crontab, it runs from home directory; means all its output file would be in home directory and required files should be in home directory for it to fuction without any problem. If you added the script to crontab with root accout, the script will run from /root directory._
