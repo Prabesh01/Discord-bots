@@ -1,4 +1,4 @@
-## Some utiliyy scripts to use after you bot has been deployed
+## Some utility scripts to use after you bot has been deployed
 _Just keep your bot token in .env file and run any of the scripts to get started_
 
 ### monitor.py
