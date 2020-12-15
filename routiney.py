@@ -5,7 +5,7 @@ from os import path
 from dotenv import load_dotenv
 import requests
 import random
-
+from discord_webhook import DiscordWebhook
 
 c = discord.Client()
 
@@ -87,11 +87,13 @@ async def on_message(message):
                 for line in f:
                     if not hoo in line:
                         output.append(line)
+                    if hoo in line:
+                        await hook.delete()                        
                 f.close()
                 f = open(fname, 'w')
                 f.writelines(output)
                 f.close()            
-            await message.channel.send("This channel is unsubscribed sucessflly")
+            await message.channel.send("This channel is unsubscribed sucessfully")
         if old==None:
             await message.channel.send("This channel was never subscribed\nUse r!sub to sunscribe")                     
 c.run(DISCORD_TOKEN)
