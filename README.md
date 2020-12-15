@@ -21,7 +21,7 @@
 - Create a bot from [here](https://discord.com/developers/applications/) and invite it to your server with administrative permission 
 - Replace bot token in .env file
 - To serve the bot, keep routiney.py running in backgroung using<br>
-```nohup python3 routiey.py &``` <br>
+```nohup python3 routiney.py &``` <br>
 and keep hook.py in cronjob (crontab -e) as: <br>
 ```* * * * * python3 hook.py```
 
