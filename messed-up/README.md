@@ -1,5 +1,5 @@
 # Ignore this directory. These are the scripts I tried, which works fine but is all messed up and isn't trustworthy.
-_You can see this code for reference on how not to code a bot_
+_You can use this code as reference on how not to code a bot_
 
 #### routiney.py
 
