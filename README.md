@@ -1,3 +1,5 @@
+_In the script, text files are used to store and process channel IDs and webhook URLs to use as less resource as possible because I was using free tier of EC2 instance of AWS. It is strongly recommended to store and process these data using some database managers like panda or something else_
+
 ## __routiney.py + hook.py + .env__
 
 - routiney.py: Keeps the bot online 24/7, replies to pre-defined commands, subscribes and unsubscribe channels. Preferred to keep this script running in background.
