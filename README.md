@@ -42,5 +42,5 @@ _I would suggest to keep all files in home directory rather than other because w
     - __Secure-3PAPISID Value (Cookie)
 - Enter above 6 values including webhook url in youtubey.py from line 10-15 in respective places.
 - Finally, keep youtubey.py in cronjob (crontab -e) as: <br>
-```0 * * * * python3 hook.py```
+```0 * * * * python3 youtubey.py```
 This will check notification every hour and send discord messages if new notificaton is detected.
