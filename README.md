@@ -31,7 +31,7 @@ and keep hook.py in cronjob (crontab -e) as: <br>
 _I would suggest to keep all files in home directory rather than other because when a script is running through crontab, it runs from home directory; means all its output file would be in home directory and required files should be in home directory for it to fuction without any problem. If you added the script to crontab with root accout, the script will run from /root directory._
 
 
-## __youtubey.py + .env__ (Send discord message for every new youtube notification)
+## __youtubey.py__ (Send discord message for every new youtube notification)
 
 ##### Usage
  - Note down the webhook url of the channel you want the notification to be sent. Then Go to youtube.com. After it loads, open network tab in developers tool and click on notification icon in youtube homepage. In network tab, search for 'get_notification_menu'. You will probably see one request. See request header (enable raw view for ease) and note down these 5 values: 
