@@ -1,6 +1,6 @@
-_In the script, text files are used to store and process channel IDs and webhook URLs to use as less resource as possible because I was using free tier of EC2 instance of AWS. It is strongly recommended to store and process these data using some database managers like panda or something else_
+_In the script, text files are used to store and process channel IDs and URLs to use as less resource as possible because I was using free tier of EC2 instance of AWS. It is strongly recommended to store and process these data using some database managers like panda or something else_
 
-## __routiney.py + hook.py + .env__
+## __routiney.py + hook.py + .env__ (Scrape fb page and send discord message for every new post by a page)
 
 - routiney.py: Keeps the bot online 24/7, replies to pre-defined commands, subscribes and unsubscribe channels. Preferred to keep this script running in background.
 - hook.py: scrape latest posts from the facebook page and send to the wehooks collected by routiney.py. Preferred to keep this script in cron job to run in every x minutes.
@@ -29,3 +29,18 @@ and keep hook.py in cronjob (crontab -e) as: <br>
 ```* * * * * python3 hook.py```
 
 _I would suggest to keep all files in home directory rather than other because when a script is running through crontab, it runs from home directory; means all its output file would be in home directory and required files should be in home directory for it to fuction without any problem. If you added the script to crontab with root accout, the script will run from /root directory._
+
+
+## __youtubey.py + .env__ (Send discord message for every new youtube notification)
+
+##### Usage
+ - Note down the webhook url of the channel you want the notification to be snet. Then Go to youtube.com. After it loads, open network tab in developers tool and click on notification icon in youtube homepage. In network tab, search for 'get_notification_menu'. You will probably see one request. See request header (enable raw view for ease) and note down these 5 values: 
+    - Api Key (POST /youtubei/v1/notification/get_notification_menu?key=XXXXXXXX)
+    - User Agent (User-Agent: XXXXXXX)
+    - Authorization Header (Authorization: XXXXXXXX)
+    - __Secure-3PSID Value (Cookie)
+    - __Secure-3PAPISID Value (Cookie)
+- Enter above 6 values including webhook url in youtubey.py from line 10-15 in respective places.
+- Finally, keep youtubey.py in cronjob (crontab -e) as: <br>
+```0 * * * * python3 hook.py```
+This will check notification every hour and send discord messages if new notificaton is detected.
