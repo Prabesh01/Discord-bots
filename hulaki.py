@@ -40,8 +40,8 @@ try:
     if re.search('class="', message):
         message='seems like mesaage contains an attatchment or an emoji'
 except:
-    user=""
-    message=""
+    user="Hulaki Error Reporting"
+    message="Something went wrong. Most probably, the provided values might have expired."
 
 fl('fb.txt')
 f = open("fb.txt", "r")
