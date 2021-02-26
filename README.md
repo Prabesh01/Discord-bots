@@ -34,7 +34,7 @@ _I would suggest to keep all files in home directory rather than other because w
 ## __youtubey.py + .env__ (Send discord message for every new youtube notification)
 
 ##### Usage
- - Note down the webhook url of the channel you want the notification to be snet. Then Go to youtube.com. After it loads, open network tab in developers tool and click on notification icon in youtube homepage. In network tab, search for 'get_notification_menu'. You will probably see one request. See request header (enable raw view for ease) and note down these 5 values: 
+ - Note down the webhook url of the channel you want the notification to be sent. Then Go to youtube.com. After it loads, open network tab in developers tool and click on notification icon in youtube homepage. In network tab, search for 'get_notification_menu'. You will probably see one request. See request header (enable raw view for ease) and note down these 5 values: 
     - Api Key (POST /youtubei/v1/notification/get_notification_menu?key=XXXXXXXX)
     - User Agent (User-Agent: XXXXXXX)
     - Authorization Header (Authorization: XXXXXXXX)
