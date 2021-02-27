@@ -42,7 +42,7 @@ _I would suggest to keep all files in home directory rather than other because w
     - __Secure-3PAPISID Value (Cookie)
 - Enter above 6 values including webhook url in youtubey.py from line 10-15 in respective places.
 - Finally, keep youtubey.py in cronjob (crontab -e) as: <br>
-```0 * * * * python3 youtubey.py```
+```0 * * * * python3 youtubey.py```<br>
 This will check notification every hour and send discord messages if new notificaton is detected.
 
 ## __hulaki.py__ (Send discord message for every new facebook message)
@@ -51,7 +51,7 @@ This will check notification every hour and send discord messages if new notific
  - Note down the webhook url of the channel you want the notification to be sent. Then copy xs and c_user value from cookie of facebook.com or m.facebook.com or mbasic.facebook.com.
  -  Enter above 3 values including webhook url in youtubey.py from line 8-11 in respective places. Enter Useragent too if you faced some problems.
 - Finally, keep youtubey.py in cronjob (crontab -e) as: <br>
-```0 * * * * python3 hulaki.py```
+```0 * * * * python3 hulaki.py```<br>
 This will check new messages every hour and send discord messages if new message is detected.
 
 ## __zapier.com__ (Get discord channel message for new gmail mails)
