@@ -54,3 +54,10 @@ This will check notification every hour and send discord messages if new notific
 ```0 * * * * python3 hulaki.py```
 This will check new messages every hour and send discord messages if new message is detected.
 
+## __zapier.com__ (Get discord channel message for new gmail mails)
+
+##### Usage:
+- Just setup these two zaps and you are done:
+ - [Add rows to Google Sheets with new emails on Gmail](https://zapier.com/app/editor/114807052/nodes/114807052/auth)
+ - [Send Discord channel messages with new Google Sheets rows](https://zapier.com/app/editor/114807030/nodes/114807030/auth)
+Direct integration between discord and gmail used to be available but recently after few changes in google's privacy policy it is no longer supporter. That's why we have to use google sheet as bridge between discord and gmail.
