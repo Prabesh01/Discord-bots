@@ -1,5 +1,13 @@
+# Content
+- [Scrape fb page and send discord message for every new post by a page](#routiney)
+- [Send discord message for every new youtube notification](#youtubey)
+- [Send discord message for every new facebook message](#hulaki)
+- [Get discord channel message for new gmail mails](#zapier)
+- [Get discord channel message for new tweets by selected public page](#tweetshift)
+
 _In the script, text files are used to store and process channel IDs and URLs to use as less resource as possible because I was using free tier of EC2 instance of AWS. It is strongly recommended to store and process these data using some database managers like panda or something else_
 
+# <a name="routiney"></a> 
 ## __routiney.py + hook.py + .env__ (Scrape fb page and send discord message for every new post by a page)
 
 - routiney.py: Keeps the bot online 24/7, replies to pre-defined commands, subscribes and unsubscribe channels. Preferred to keep this script running in background.
@@ -30,7 +38,7 @@ and keep hook.py in cronjob (crontab -e) as: <br>
 
 _I would suggest to keep all files in home directory rather than other because when a script is running through crontab, it runs from home directory; means all its output file would be in home directory and required files should be in home directory for it to fuction without any problem. If you added the script to crontab with root accout, the script will run from /root directory._
 
-
+# <a name="youtubey"></a> 
 ## __youtubey.py__ (Send discord message for every new youtube notification)
 
 ##### Usage
@@ -45,6 +53,7 @@ _I would suggest to keep all files in home directory rather than other because w
 ```0 * * * * python3 youtubey.py```<br>
 This will check notification every hour and send discord messages if new notificaton is detected.
 
+# <a name="hulaki"></a> 
 ## __hulaki.py__ (Send discord message for every new facebook message)
 
 ##### Usage
@@ -54,6 +63,7 @@ This will check notification every hour and send discord messages if new notific
 ```0 * * * * python3 hulaki.py```<br>
 This will check new messages every hour and send discord messages if new message is detected.
 
+# <a name="zapier"></a> 
 ## __zapier.com__ (Get discord channel message for new gmail mails)
 
 ##### Usage:
@@ -62,7 +72,8 @@ This will check new messages every hour and send discord messages if new message
  - [Send Discord channel messages with new Google Sheets rows](https://zapier.com/app/editor/114807030/nodes/114807030/auth) <br>
 Direct integration between discord and gmail used to be available but recently after few changes in google's privacy policy it is no longer supporter. That's why we have to use google sheet as bridge between discord and gmail.
 
-## __tweetshift__ (Get discord channel message for new tweets by selected public figure or page)
+# <a name="tweetshift"></a>
+## tweetshift (Get discord channel message for new tweets by selected public page)
 
 ##### Usage:
 - Just invite [this bot](https://discord.com/oauth2/authorize?client_id=713026372142104687&permissions=537160768&redirect_uri=https://tweetshift.com/invite/callback&response_type=code&scope=bot) and you are done. Type t!help in server after inviting bot to know about commands and set it up easily.
