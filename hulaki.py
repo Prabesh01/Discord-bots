@@ -30,9 +30,9 @@ out=response.text
 
 try:
     scrap=re.findall('<!--.*?-->', out, re.DOTALL)
-    scrapp=re.findall('_52jd _52.*?<span>', scrap[0], re.DOTALL)
+    scrapp=re.findall('_52jd _52.*?<span', scrap[0], re.DOTALL)
     scrapp=re.sub('_52jd _52.*?">', '', scrapp[0])
-    user=re.sub('<span>', '', scrapp)
+    user=re.sub('<span', '', scrapp)
 
     scrappe=re.findall('snippet ellipsis _3z10 _3z11.*?</span>', scrap[0], re.DOTALL)
     scrappe=re.sub('snippet ellipsis _3z10 _3z11">', '', str(scrappe[0]))
