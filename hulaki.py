@@ -33,6 +33,7 @@ try:
     scrapp=re.findall('_52jd _52.*?<span', scrap[0], re.DOTALL)
     scrapp=re.sub('_52jd _52.*?">', '', scrapp[0])
     user=re.sub('<span', '', scrapp)
+    user=re.sub('</h3>', '', user)
 
     scrappe=re.findall('snippet ellipsis _3z10 _3z11.*?</span>', scrap[0], re.DOTALL)
     scrappe=re.sub('snippet ellipsis _3z10 _3z11">', '', str(scrappe[0]))
@@ -46,8 +47,8 @@ except:
 fl('fb.txt')
 f = open("fb.txt", "r")
 prev=f.read()
-old=re.search(user, prev)
-oldm=re.search(message, prev)
+old=re.search(re.escape(user), prev)
+oldm=re.search(re.escape(message), prev)
 if any( [old == None, oldm == None] ):
     webhook = DiscordWebhook(username='Hulaki', avatar_url='https://i.pinimg.com/564x/98/1a/ea/981aea34c2ce10a6b39e3192a518b88e.jpg', url=wurl, content="New Conversation with "+user+": "+message)
     response = webhook.execute()
