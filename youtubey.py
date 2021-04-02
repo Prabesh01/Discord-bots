@@ -37,7 +37,10 @@ out=response.text
 out=json.loads(out)
 try:
     for i in range(20):
-        vid=out['actions'][0]['openPopupAction']['popup']['multiPageMenuRenderer']['sections'][0]['multiPageMenuNotificationSectionRenderer']['items'][i]['notificationRenderer']['navigationEndpoint']['watchEndpoint']['videoId']
+        try:
+            vid=out['actions'][0]['openPopupAction']['popup']['multiPageMenuRenderer']['sections'][0]['multiPageMenuNotificationSectionRenderer']['items'][i]['notificationRenderer']['navigationEndpoint']['watchEndpoint']['videoId']
+        except:
+            vid=out['actions'][0]['openPopupAction']['popup']['multiPageMenuRenderer']['sections'][0]['multiPageMenuNotificationSectionRenderer']['items'][i]['notificationRenderer']['navigationEndpoint']['getCommentsFromInboxCommand']['videoId']
         fl('y.txt')
         f = open("y.txt", "r")
         prev=f.read()
