@@ -9,7 +9,8 @@ c = discord.Client()
 @c.event
 async def on_message(message):
     if message.author == c.user:
-        return  
+            return
+    if message.author.bot: return
     clts = message.channel.id
     channel = c.get_channel(clts)
     ID = message.guild.id
@@ -17,6 +18,9 @@ async def on_message(message):
     data = pd.DataFrame(columns=['time', 'author','guild','channel','content'])
     if path.exists(str(ID)+'.csv') !=True:
         async for msg in message.channel.history(limit=10000000000000000000000000):
+            if msg.author == c.user:
+                    continue
+            if msg.author.bot: continue            
             data = data.append({'time': msg.created_at.isoformat(),
                                 'author': msg.author.name,
                                 'guild': guild,
