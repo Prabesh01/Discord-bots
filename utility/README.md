@@ -16,4 +16,4 @@ _Diclaimer: This is strictly prohibited and is considered to be illegal and even
 ### log.py
 - Logs the past and present messages of all the active guilds your bot is in
 
-_For this script to work, the bot must be given required permission while adding to the server. The permission includes send messages; administration permission would be great though_
+_For these script to work, the bot must be given required permission while adding to the server. The permission includes send messages; administration permission would be great though_
