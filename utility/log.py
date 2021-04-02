@@ -32,7 +32,7 @@ async def on_message(message):
         #print('done')
     else:
         data = [
-            [message.created_at.isoformat(),message.author.name, guild, channel,  message.content]
+            [message.created_at.isoformat(),message.author, guild, channel,  message.content]
         ]
         dataframe = pd.DataFrame(data)
         dataframe.to_csv(str(ID)+".csv", index=False, mode='a', header=False)
