@@ -22,7 +22,7 @@ async def on_message(message):
                     continue
             if msg.author.bot: continue            
             data = data.append({'time': msg.created_at.isoformat(),
-                                'author': msg.author.name,
+                                'author': msg.author,
                                 'guild': guild,
                                 'channel': channel,
                                 'content': msg.content}, ignore_index=True)
