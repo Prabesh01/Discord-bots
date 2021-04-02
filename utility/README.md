@@ -13,4 +13,7 @@ _To see how many has subscribed to your bot, just check the line count of hook.t
 _Diclaimer: This is strictly prohibited and is considered to be illegal and even punishable by law in some cases. I am just mentioning this for educational purpose. I am not responsible for any of your actions_ <br>
 - Read live messages of all the guilds your bot is in
 
+### log.py
+- Logs the past and present messages of all the active guilds your bot is in
+
 _For this script to work, the bot must be given required permission while adding to the server. The permission includes send messages; administration permission would be great though_
