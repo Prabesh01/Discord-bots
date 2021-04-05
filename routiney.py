@@ -43,6 +43,11 @@ async def on_message(message):
         await message.channel.send(response)
           
     if message.content == 'r!sub':
+        if message.author.guild_permissions.administrator:
+            pass
+        else:
+            await message.channel.send("Only server admins are allowed to use this command!")
+            return     
         clts = message.channel.id
         channel = c.get_channel(clts)  
         clts=str(clts)    
@@ -65,6 +70,11 @@ async def on_message(message):
             await message.channel.send("This channel was already subscribed") 
                         
     if message.content == 'r!unsub':
+        if message.author.guild_permissions.administrator:
+            pass
+        else:
+            await message.channel.send("Only server admins are allowed to use this command!")
+            return       
         clts = message.channel.id
         clt=str(clts)
         fl('list.txt')
