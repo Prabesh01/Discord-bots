@@ -47,8 +47,8 @@ except:
 fl('fb.txt')
 f = open("fb.txt", "r")
 prev=f.read()
-old=re.search(re.escape(user), prev)
-oldm=re.search(re.escape(message), prev)
+old=re.search(re.escape(user), str(prev).strip())
+oldm=re.search(re.escape(message), str(prev).strip())
 if any( [old == None, oldm == None] ):
     webhook = DiscordWebhook(username='Hulaki', avatar_url='https://i.pinimg.com/564x/98/1a/ea/981aea34c2ce10a6b39e3192a518b88e.jpg', url=wurl, content="New Conversation with "+user+": "+message)
     response = webhook.execute()
