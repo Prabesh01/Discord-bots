@@ -23,7 +23,13 @@ async def on_ready():
 		async for member in guild.fetch_members(limit=None):
 		    print("{}. {} - {}".format(mem_count,member,member.id))
 	            mem_count = mem_count + 1
-		print('')		
+		print('')
+		cha_count=0
+		for channel in guild.channels:
+		    print("{}. {} - {} : {}".format(cha_count, channel,channel.id, channel.type))
+		    cha_count = cha_count + 1
+		print('')
+		print('')
 		guild_count = guild_count + 1
 
 	print("Yor bot is in " + str(guild_count) + " guilds.")
