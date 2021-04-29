@@ -18,6 +18,8 @@ async def on_message(message):
     data = pd.DataFrame(columns=['time', 'author','guild','channel','content'])
     if path.exists(str(ID)+'.csv') !=True:
         async for msg in message.channel.history(limit=10000000000000000000000000):
+            #link = await message.channel.create_invite(max_age = 0)
+            #print(link)
             if msg.author == c.user:
                     continue
             if msg.author.bot: continue            
