@@ -23,11 +23,15 @@ def routiney():
     if total==0:
         return
     for post in get_posts('officialroutineofnepalbanda', pages=1):
-        time=str(post['time'])
+        time=str(post['post_id'])
         f = open("r.txt", "r")
         prev=f.read()
         old=re.search(time, prev)
         if old==None: 
+            if(str(post['video'])!='None'):
+              webhook = DiscordWebhook(url=hooks, content=str(post['text'])+'\n'+str(post['video']))
+              webhook.execute()
+              continue
             webhook = DiscordWebhook(username='Routiney', avatar_url='https://pbs.twimg.com/profile_images/777188003445739521/t5GNGfAc_400x400.jpg', url=hooks)
             embed = DiscordEmbed(description=str(post['text']))            
             embed.set_author(name='Routiney', url=post['post_url'], icon_url='https://pbs.twimg.com/profile_images/777188003445739521/t5GNGfAc_400x400.jpg')
