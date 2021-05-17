@@ -33,10 +33,25 @@ async def on_message(message):
     'jurukka uthera jhyamma mukh padkau!',
     'Sutna dyao, chuppa lara!',
     'Turi tandim tero?',
+    'latiko poi',
     'khate bahun'
     ]
     if message.content == "r!":
-        await message.channel.send("Looks like you set me up well\nUse r!sub to start getting new posts by RONB\nContact Prabesh#1134 if you want to receive updates from other pages as well")
+        member=message.guild.me
+        perm_list = [perm[0] for perm in message.channel.permissions_for(member) if perm[1]]
+        if not('manage_webhooks' in perm_list):
+          await message.channel.send("Grrrr. I don't have permission to manage webhooks. You must provide me that permission in order to use me.\nFacing any issue with the bot? Inform me: Prabesh#1134")
+          return
+        if not('embed_links' in perm_list):
+          await message.channel.send("Grrrr. I don't have permission to embed links. I would need that permission to show you images and videos.\nAny  issues with the bot? Inform me: Prabesh#1134")
+          return 
+        if not('read_message_history' in perm_list):
+          await message.channel.send("I don't have permission to read message history. This permisson isn't compulsory but you won't be able to use // command to delete messages of the channel\nFor more information, contact: Prabesh#1134")
+          return
+        if('administrator' in perm_list):
+          await message.channel.send("Everything is just perfect!\nFeel free to contact me if you faced any issue: Prabesh#1134")
+          return        
+        await message.channel.send("Looks like you set me up well\nFeel free to contact me if you faced any issue: Prabesh#1134")
 
     if message.content == 'oa':
         response = random.choice(oa)
@@ -47,7 +62,12 @@ async def on_message(message):
             pass
         else:
             await message.channel.send("Only server admins are allowed to use this command!")
-            return     
+            return
+        member=message.guild.me
+        perm_list = [perm[0] for perm in message.channel.permissions_for(member) if perm[1]]
+        if not('manage_webhooks' in perm_list):
+          await message.channel.send("Grrrr. I don't have permission to manage webhooks. You must provide me that permission in order to use me.")
+          return    
         clts = message.channel.id
         channel = c.get_channel(clts)  
         clts=str(clts)    
@@ -65,9 +85,9 @@ async def on_message(message):
             f = open("hook.txt", "a")
             f.write(clts+'\n')
             f.close()               
-            await message.channel.send("This channel is subscribed to receive routiney's new shits\nUse r!unsub to unsubscribe")
+            await message.channel.send("This channel is subscribed to receive routiney's new shit\nUse r!unsub to unsubscribe\nFeel free to contact me if you faced any issue: Prabesh#1134")
         if old!=None:
-            await message.channel.send("This channel was already subscribed") 
+            await message.channel.send("This channel was already subscribed. \n Use r!unsub to unsubscribe first.") 
                         
     if message.content == 'r!unsub':
         if message.author.guild_permissions.administrator:
@@ -103,7 +123,7 @@ async def on_message(message):
                 f = open(fname, 'w')
                 f.writelines(output)
                 f.close()            
-            await message.channel.send("This channel is unsubscribed sucessfully")
+            await message.channel.send("This channel is unsubscribed sucessfully\nFeel free to send me your feedbacks/complaints: Prabesh#1134")
         if old==None:
-            await message.channel.send("This channel was never subscribed\nUse r!sub to sunscribe")                     
+            await message.channel.send("This channel was never subscribed\nUse r!sub to sunscribe\nUse r!sub to subscribe")                     
 c.run(DISCORD_TOKEN)
