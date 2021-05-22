@@ -41,7 +41,7 @@ def routiney():
                 webhook.add_embed(embed)
                 webhook.execute()
                 for imgs in post['images']:
-                    webhook = DiscordWebhook(username='Routiney', avatar_url='https://cdn.discordapp.com/app-icons/786534057437691914/8dd876fd77d51452a5e3b3df4bc0ce18.png?size=256', url='https://discord.com/api/webhooks/831024560810754078/vJBqd5anP-0o6vRxIKvLIlJpk9Na-lE4LWqmtDRPJzoNQ-ows1Zdeb9I11hnTx1Slg0A')
+                    webhook = DiscordWebhook(username='Routiney', avatar_url='https://cdn.discordapp.com/app-icons/786534057437691914/8dd876fd77d51452a5e3b3df4bc0ce18.png?size=256', url=hooks)
                     embed = DiscordEmbed(description='\u200b')
                     embed.set_image(url=imgs)
                     webhook.add_embed(embed)
