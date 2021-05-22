@@ -36,26 +36,30 @@ def routiney():
             embed = DiscordEmbed(description=str(post['text']))            
             embed.set_author(name='Routiney', url=post['post_url'], icon_url='https://pbs.twimg.com/profile_images/777188003445739521/t5GNGfAc_400x400.jpg')
             img = post['images']
-            imgcount=len(img)
-            if(imgcount>2):
-                webhook.add_embed(embed)
-                webhook.execute()
-                for imgs in post['images']:
-                    webhook = DiscordWebhook(username='Routiney', avatar_url='https://cdn.discordapp.com/app-icons/786534057437691914/8dd876fd77d51452a5e3b3df4bc0ce18.png?size=256', url=hooks)
-                    embed = DiscordEmbed(description='\u200b')
-                    embed.set_image(url=imgs)
+            try:
+                imgcount=len(img)
+                if(imgcount>2):
                     webhook.add_embed(embed)
                     webhook.execute()
-            else:
-                try:
-                    embed.set_image(url=img[1])
-                    embed.set_thumbnail(url=img[0])
-                except:
+                    for imgs in post['images']:
+                        webhook = DiscordWebhook(username='Routiney', avatar_url='https://cdn.discordapp.com/app-icons/786534057437691914/8dd876fd77d51452a5e3b3df4bc0ce18.png?size=256', url=hooks)
+                        embed = DiscordEmbed(description='\u200b')
+                        embed.set_image(url=imgs)
+                        webhook.add_embed(embed)
+                        webhook.execute()
+                else:
+                    try:
+                        embed.set_image(url=img[1])
+                        embed.set_thumbnail(url=img[0])
+                    except:
+                        embed.set_image(url=post['image'])
+                    embed.set_footer(text='Blah Blah Blah ...') 
+                    webhook.add_embed(embed)
+                    response = webhook.execute()
+             except:
                     embed.set_image(url=post['image'])
-                embed.set_footer(text='Blah Blah Blah ...') 
-                webhook.add_embed(embed)
-                response = webhook.execute()
-                #print(response)
+                    webhook.add_embed(embed)
+                    webhook.execute()                    
             last=str(post['time'])
             f = open("r.txt", "a")
             f.write(last)
