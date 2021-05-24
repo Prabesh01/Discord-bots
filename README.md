@@ -4,6 +4,7 @@
 - [Send discord message for every new facebook message](#hulaki)
 - [Get discord channel message for new gmail mails](#zapier)
 - [Get discord channel message for new tweets by selected public page](#tweetshift)
+- [Fetch particular content from image (news paper in this case) and post it to discord](#abin)
 
 _In the script, text files are used to store and process channel IDs and URLs to use as less resource as possible because I was using free tier of EC2 instance of AWS. It is strongly recommended to store and process these data using some database managers like panda or something else_
 
@@ -70,10 +71,16 @@ This will check new messages every hour and send discord messages if new message
 - Just setup these two zaps and you are done:
  - [Add rows to Google Sheets with new emails on Gmail](https://zapier.com/app/editor/114807052/nodes/114807052/auth)
  - [Send Discord channel messages with new Google Sheets rows](https://zapier.com/app/editor/114807030/nodes/114807030/auth) <br>
-Direct integration between discord and gmail used to be available but recently after few changes in google's privacy policy it is no longer supporter. That's why we have to use google sheet as bridge between discord and gmail.
+Direct integration between discord and gmail used to be available but recently after few changes in google's privacy policy it is no longer supporter. That's why we have to use google sheet as bridge between discord and gmail. Alternatively, you can use automate.io.
 
 # <a name="tweetshift"></a>
 ## tweetshift (Get discord channel message for new tweets by selected public page)
 
 ##### Usage:
 - Just invite [this bot](https://discord.com/oauth2/authorize?client_id=713026372142104687&permissions=537160768&redirect_uri=https://tweetshift.com/invite/callback&response_type=code&scope=bot) and you are done. Type t!help in server after inviting bot to know about commands and set it up easily.
+
+# <a name="abin"></a>
+## abin.py (Fetch particular content from image and post it to discord)
+
+##### Usage:
+- Just install the imported libraries, provide your webhook url or list of webhooks in line 25,download the given template imag (ab.png) and run the script everyday after 10am.
