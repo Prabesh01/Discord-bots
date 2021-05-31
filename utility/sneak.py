@@ -21,7 +21,17 @@ async def on_message(message):
     print('Channel: ',channel)
     ID = message.guild.id
     guild = c.get_guild(ID)
-    print('Server: '+str(guild))    
+    print(str(message.author)+' | '+str(guild)+' ('+str(channel)+')')
+    embeds = message.embeds
+    for embed in embeds:
+        print(embed.to_dict())
+    try:
+        attachment_url = message.attachments[0].url
+        print('Attatchment!!!!!!!!!!!: \n'+str(attachment_url))    
+        # file_request = requests.get(attachment_url)
+        # print(file_request.content)    
+    except:
+        pass
     print('Message:'+str(message.content)+"\n")
     
 c.run(DISCORD_TOKEN)
