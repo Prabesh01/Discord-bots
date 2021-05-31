@@ -11,4 +11,4 @@ _Diclaimer: This is strictly prohibited and is considered to be illegal and even
 ### log.py / fetch.py
 - Logs the past and present messages of all the active guilds your bot is in
 
-_For these script to work, the bot must be given required permission while adding to the server. The permission includes send messages, read message history; administration permission would be great though_
+_For these script to work, the bot must be given required permission while adding to the server. The permission includes send messages, read message history; administration permission would be great though. And for fetch.py, you would need the intents to be enabled from bot's dashboard_
