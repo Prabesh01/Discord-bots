@@ -11,13 +11,13 @@ c = discord.Client(intents=intents)
 # intents.typing = True
 # intents.presences = True
 #intents.members=True
-
+guild_count=0
 @c.event
 async def on_ready():
-    guild_count = 0
     for guild in c.guilds:
-        print(guild_count)    
-        data = pd.DataFrame(columns=['time', 'author','channel','content'])
+        #if(str(guild.id)!='751702370542551143'):
+        #    continue
+        data = pd.DataFrame(columns=['time', 'author','channel','content','attatchment','embed'])
         file_location = str(guild.id)+".csv"
         data.to_csv(file_location, index=False)
         with open(str(guild.id)+".txt", "a", encoding='utf-8') as info:
@@ -35,41 +35,55 @@ async def on_ready():
             for channel in guild.channels:
                 with open(str(guild.id)+".txt", "a", encoding='utf-8') as info:
                     info.write(str(cha_count)+". "+ str(channel) +" - "+str(channel.id) +" : "+str(channel.type)+"\n")
-                if(str(channel.type)=='text'):                
-                    async for msg in channel.history(limit=10000000000000000000000000):
-                        if msg.author == c.user:
-                                continue
-                        if msg.author.bot: continue
-                        # data = [
-                            # [msg.created_at.isoformat(),msg.author, channel,  msg.content]# msg.embeds[0].to_dict()
-                        # ]
-                        try:
+                if(str(channel.type)=='text'):
+                    try:
+                        async for msg in channel.history(limit=10000000000000000000000000):
+                            if msg.author == c.user:
+                                    continue
+                            if msg.author.bot: continue
+                            # data = [
+                                # [msg.created_at.isoformat(),msg.author, channel,  msg.content]# msg.embeds[0].to_dict()
+                            # ]
+                            embe=[]
+                            embeds = msg.embeds
+                            for embed in embeds:
+                                embe.append(str(embed))
+                            try:
+                                attachment_url = msg.attachments[0].url
+                                # file_request = requests.get(attachment_url)
+                                # print(file_request.content)    
+                            except:
+                                attachment_url=''
                             data = data.append({'time': msg.created_at.isoformat(),
                                                 'author': msg.author,
                                                 'channel': channel,
                                                 'content': msg.content,
-                                                'embed': msg.embeds[0].to_dict()["url"]}, ignore_index=True)
-                        except:                        
-                            data = data.append({'time': msg.created_at.isoformat(),
-                                                'author': msg.author,
-                                                'channel': channel,
-                                                'content': msg.content}, ignore_index=True)
-                        # datta.append(data)
-                    # #print(str(data))
-                    # dataframe = pd.DataFrame(data)
-                    # dataframe=dataframe.iloc[::-1]
-                    # file_location = str(guild.id)+".csv"
-                    # dataframe.to_csv(file_location, index=False, mode='a', header=False)              
+                                                'attatchment': attachment_url,
+                                                'embed': embe}, ignore_index=True)
+
+                            # datta.append(data)
+                        # #print(str(data))
+                        # dataframe = pd.DataFrame(data)
+                        # dataframe=dataframe.iloc[::-1]
+                        # file_location = str(guild.id)+".csv"
+                        # dataframe.to_csv(file_location, index=False, mode='a', header=False)              
+                    except:
+                        print('No history perm')
                 cha_count = cha_count + 1
-            # link = await channel.create_invite(max_age = 0)
+            # try:
+                # link = await channel.create_invite(max_age = 0)
+            # except:
+                # link='No perms'
             # with open(str(guild.id)+".txt", "a", encoding='utf-8') as info:
                 # info.write("\nInvite link: "+str(link))
             # info.close()         
             data=data.iloc[::-1]
             data.to_csv(str(guild.id)+'.csv', index=False)
-            guild_count = guild_count + 1
+            #
         except:
             pass
+        guild_count = guild_count + 1
+        print(guild_count)
     print('done')
 
 c.run('TOKEN_HERE')
