@@ -29,6 +29,7 @@ headers = {
     'Content-Type': 'application/json',
     'User-Agent': useragent,
     'Authorization': authheader,
+    'X-Goog-Authuser': '1',
     'X-Origin': 'https://www.youtube.com'
 }
 
