@@ -4,6 +4,7 @@
 - [Send discord message for every new facebook message](#hulaki)
 - [Get discord channel message for new gmail mails](#zapier)
 - [Get discord channel message for new tweets by selected public page](#tweetshift)
+- [Role reward bot based on mee6 level](#role_reward)
 - [Fetch particular content from image (news paper in this case) and post it to discord](#abin)
 
 _In the script, text files are used to store and process channel IDs and URLs to use as less resource as possible because I was using free tier of EC2 instance of AWS. It is strongly recommended to store and process these data using some database managers like panda or something else_
@@ -78,6 +79,19 @@ Direct integration between discord and gmail used to be available but recently a
 
 ##### Usage:
 - Just invite [this bot](https://discord.com/oauth2/authorize?client_id=713026372142104687&permissions=537160768&redirect_uri=https://tweetshift.com/invite/callback&response_type=code&scope=bot) and you are done. Type t!help in server after inviting bot to know about commands and set it up easily.
+
+# <a name="role_reward"></a>
+## mee6.py (Give roles to server members based on mee6 level)
+
+##### Info:
+- Mee6 discord bot has some features limited to premium members. Those features are cool but isn't quite important to have in normal servres so mee6 free membership is just fine. But one important feature that is not available for mee6 free users is the level based rewards. 
+- Using this mee6.py, your bot in the server will fetch your server's leaderboard from mee6 api and check each members level and gives roles as configured in the script.
+
+##### Usage:
+- Make sure mee6 leveling is enabled and your server's leaderboard is public.
+- Have your bot that will give the roles to your server members, ready in the server with all required permissions to the bot.
+- Provide the required values in mee6.py from line 5-11
+- Run the script in cronjob for every one day or one hour based on how busy your server is. Or you can remove the sys.exit() in line 51 and run the on_ready fuction in loop every one hour or so using task events.
 
 # <a name="abin"></a>
 ## abin.py (Fetch particular content from image and post it to discord)
