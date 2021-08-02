@@ -11,7 +11,6 @@ from discordTogether import DiscordTogether
 import traceback
 import datetime
 import logging
-import topgg
 from discord.ext import tasks
 import nepali_datetime
 import pytz
@@ -35,16 +34,7 @@ blob = "JSONBLOB_URL_1"
 blobre = "JSONBLOB_URL_2"
 bloboa = "JSONBLOB_URL_3"
 blobr = "JSONBLOB_URL_4"
-dbl_token="TOP.GG_BOT'S_WEBHOOK_TOKEN_HERE"
 
-c.topggpy = topgg.DBLClient(c, dbl_token, autopost=True, post_shard_count=False)
-
-
-@c.event
-async def on_autopost_success():
-    print(
-        f"Posted server count ({c.topggpy.guild_count}) to top.gg"
-    )
 
 @tasks.loop(minutes=5)
 async def test():
@@ -156,8 +146,6 @@ async def status_task():
 @c.event
 async def on_ready():
     print('ready')
-    if test.is_running() != True:
-        test.start()
     c.loop.create_task(status_task())
     pass
 
