@@ -1,0 +1,9 @@
+discord.py
+discord-webhook
+discord-together
+topggpy
+discord-ext-bot
+facebook-scraper
+discord-webhook
+langdetect
+nepali-datetime
