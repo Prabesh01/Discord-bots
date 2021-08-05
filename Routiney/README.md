@@ -1,6 +1,12 @@
-**Here's a quick video for those who didn't understand the instructions below:** https://www.youtube.com/watch?v=dQw4w9WgXcQ
+## Bot Info
+
+- Official Website: [ronb.xyz](https://ronb.xyz)
+- Top.gg Link: https://top.gg/bot/786534057437691914#/
+- [Bot Invite Link](https://discord.com/api/oauth2/authorize?client_id=786534057437691914&permissions=536963136&scope=bot) • [Support Server](https://discord.gg/ehRSPHuTDy)
 
 ## Configuration
+
+**Here's a quick video for those who didn't understand the instructions below:** https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 _Simply [download this directory](https://downgit.github.io/#/home?url=https://github.com/Prabesh01/Discord-bots/tree/main/Routiney) then provide some values and the bot is ready. Easy as pie!_
 
@@ -22,3 +28,11 @@ _Simply [download this directory](https://downgit.github.io/#/home?url=https://g
 
 ## This is it! 
    now run the bot.py python script and the bot will start sending RONB fb posts once you subscribed a channel using command r!sub and also enjoy oa command. xD
+
+## Self-hosting
+
+Bot's code provided here is primarily for the transparency reasons and to help other developers implement the same functionality to their bots.
+
+Given the bot's simple nature, using the publicly-hosted version will be enough for most people, so it is highly recommended to use that version, unless you have a specific reason not to do so (such as experimenting with the code).
+
+You're free to host this bot on your own server (if you get above instructions to set it up), however I will not be providing any support in that regard, do it at your own risk. Please keep in mind that if you're directly hosting this bot, you might not monetize it in any way!
