@@ -1,0 +1,10 @@
+// module.exports = {
+	// name: 'interactionCreate',
+	// execute(interaction) {
+		// console.log(`${interaction.user.tag} in #${interaction.channel.name} triggered an interaction.`);
+	// },
+// };
+
+module.exports = async (client, interaction) => {
+	 console.log(`${interaction.user.tag} in #${interaction.channel.name} triggered an interaction.`);
+};
