@@ -1,0 +1,11 @@
+// module.exports = {
+	// name: 'error',
+	// execute(client, error) {
+		// console.log(`An error event was sent by Discord.js: \n${JSON.stringify(error)}`, "error");
+	// },
+// };
+
+module.exports = async (client, error) => {
+  console.log('err');
+  console.log(`An error event was sent by Discord.js: \n${JSON.stringify(error)}`);
+};
