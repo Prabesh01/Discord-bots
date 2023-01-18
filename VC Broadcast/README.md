@@ -1,0 +1,5 @@
+- Make sure to enable all precenses from discord's developer portal.
+- Make sure latest versions of node, ffmpeg along with all the required modules are installed.
+- Then hit `nohup node bot.js &`
+- Bot should be up. The only person whose userID is mentioned in `config.json` can use the command. Use "!join" to make bot join the VC and "!fag" to leave the VC
+- Manage your livestream from `https://studio.youtube.com/channel/UC/livestreaming`
