@@ -67,6 +67,7 @@ This will check new messages every hour and send discord messages if new message
 
 # <a name="zapier"></a> 
 ## __zapier.com__ (Get discord channel message for new gmail mails)
+_You can simply use [mail.js](https://github.com/Prabesh01/Discord-bots/blob/main/mail.js) for this cuz zapier is so unreliable. Simply keep the gmail mail address, its app password and the discord webhook url. Run the js file and done. I borrowed this code from someone else whom I cant remember, I will give proper credit once I found them again_
 
 ##### Usage:
 - Just setup these two zaps and you are done:
