@@ -4,7 +4,7 @@ import pymongo
 import config
 import json
 import base64
-from Crypto.Cipher import AES
+from Crypto.Cipher import AES # pycryptodome noy pycrypto
 from Crypto.Util.Padding import pad
 from Crypto.Util.Padding import unpad
 import datetime
