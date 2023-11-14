@@ -72,9 +72,16 @@ c.run("")
 
 # udata = json.load(open('udata.json'))
 # gdata = json.load(open('gdata.json'))
-
+# print("unique users:")
+# print(len(udata))
 # sdata=[]
 # mdata={}
+
+# memcount={}
+# for u in udata:
+    # for s in udata[str(u)][2]:
+        # if s in memcount: memcount[s]+=1
+        # else: memcount[s]=1
 
 # for g in gdata:
     # mdata[g]=[]
@@ -85,6 +92,7 @@ c.run("")
     # data["name"]=dat[0]
     # data["icon"]=dat[1] ###
     # data["inv"]=dat[2]
+    # data["mem_count"]=memcount[int(g)]
     # dato=data["owner"]={}
     # dato["id"]=dat[3]
     # user=udata[str(dat[3])]
@@ -101,11 +109,11 @@ c.run("")
        # i+=1
        # datad.append(da)       
     # sdata.append(data)
-    
+
 # for u in udata:
     # for s in udata[str(u)][2]:
         # mdata[str(s)].append(u)
-        
+            
 # with open('sdata.json', 'w') as xdu:
     # json.dump(sdata,xdu)
 
