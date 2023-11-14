@@ -66,3 +66,48 @@ async def on_ready() -> None:
     sys.exit()
     
 c.run("")
+
+
+# import json
+
+# udata = json.load(open('udata.json'))
+# gdata = json.load(open('gdata.json'))
+
+# sdata=[]
+# mdata={}
+
+# for g in gdata:
+    # mdata[g]=[]
+    
+    # dat=gdata[g]
+    # data={}
+    # data["id"]=g
+    # data["name"]=dat[0]
+    # data["icon"]=dat[1] ###
+    # data["inv"]=dat[2]
+    # dato=data["owner"]={}
+    # dato["id"]=dat[3]
+    # user=udata[str(dat[3])]
+    # dato["name"]=user[0]
+    # dato["avatar"]=user[1] ###
+    # data["boost"]=dat[4]
+    # datad=data["admins"]=[]
+    # i=0
+    # for admin in dat[5]:
+       # da={}
+       # user=udata[str(admin)]
+       # da['name']=user[0]
+       # da['id']=admin
+       # i+=1
+       # datad.append(da)       
+    # sdata.append(data)
+    
+# for u in udata:
+    # for s in udata[str(u)][2]:
+        # mdata[str(s)].append(u)
+        
+# with open('sdata.json', 'w') as xdu:
+    # json.dump(sdata,xdu)
+
+# with open('mdata.json', 'w') as xdu:
+    # json.dump(mdata,xdu)
