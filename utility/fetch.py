@@ -88,3 +88,57 @@ async def on_ready():
 
 c.run('TOKEN_HERE')
 
+
+## updated
+
+import discord
+# from os import path
+# import logging
+# import pandas as pd
+# logging.basicConfig(level=logging.INFO)
+
+# intents = discord.Intents.default()
+# intents.members = True
+# intents.guilds = True
+# intents.message_content = True
+
+# tolook=[852922162318803044, 932579139003777054, 833385869121028116,1042762040302899241, 983996629042471012,726650233597198386,965275944711499836,894925919876165653,873525809443381288,937665865632075816,977294349756952596,836365808665886720,1048635819721760869,1105376803704553525]
+# tolloklen=len(tolook)
+# c = discord.Client(intents=intents)
+
+# @c.event
+# async def on_ready():
+    # i=0
+    # for guild in c.guilds:
+        # if not guild.id in tolook: continue
+        # i+=1
+        # print(f"{i}/{tolloklen}")
+        # datas=[]
+        # for channel in guild.channels:
+            # if(str(channel.type)=='text'):
+                # print(channel)
+                # async for msg in channel.history(limit=None):
+                    # print(msg.content)
+                    # if msg.author == c.user:
+                            # continue
+                    # if msg.author.bot: continue
+                    # embe=[]
+                    # embeds = msg.embeds
+                    # for embed in embeds:
+                        # embe.append(str(embed))
+                    # atchs=[]
+                    # for atch in msg.attachments:
+                        # atchs.append(atch.url)
+                    # datas.append({'time': msg.created_at.isoformat(),
+                                        # 'author': msg.author,
+                                        # 'channel': channel,
+                                        # 'content': msg.content,
+                                        # 'attatchment':' | '.join(atchs),
+                                        # 'embed': embe})
+        # data = pd.DataFrame(datas, columns=['time', 'author','channel','content','attatchment','embed'])
+
+        # data=data.iloc[::-1]
+        # data.to_csv(str(guild.id)+'.csv', index=False)
+    # print('done')
+
+# # c.run('')
