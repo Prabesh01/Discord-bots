@@ -91,7 +91,7 @@ c.run('TOKEN_HERE')
 
 ## updated
 
-import discord
+# import discord
 # from os import path
 # import logging
 # import pandas as pd
@@ -117,28 +117,30 @@ import discord
         # for channel in guild.channels:
             # if(str(channel.type)=='text'):
                 # print(channel)
-                # async for msg in channel.history(limit=None):
-                    # print(msg.content)
-                    # if msg.author == c.user:
-                            # continue
-                    # if msg.author.bot: continue
-                    # embe=[]
-                    # embeds = msg.embeds
-                    # for embed in embeds:
-                        # embe.append(str(embed))
-                    # atchs=[]
-                    # for atch in msg.attachments:
-                        # atchs.append(atch.url)
-                    # datas.append({'time': msg.created_at.isoformat(),
-                                        # 'author': msg.author,
-                                        # 'channel': channel,
-                                        # 'content': msg.content,
-                                        # 'attatchment':' | '.join(atchs),
-                                        # 'embed': embe})
+                # try:
+                    # async for msg in channel.history(limit=None):
+                        # if msg.author == c.user:
+                                # continue
+                        # if msg.author.bot: continue
+                        # embe=[]
+                        # embeds = msg.embeds
+                        # for embed in embeds:
+                            # embe.append(str(embed))
+                        # atchs=[]
+                        # for atch in msg.attachments:
+                            # atchs.append(atch.url)
+                        # datas.append({'time': msg.created_at.isoformat(),
+                                            # 'author': msg.author,
+                                            # 'channel': channel,
+                                            # 'content': msg.content,
+                                            # 'attatchment':' | '.join(atchs),
+                                            # 'embed': embe})
+                # except: 
+                    # print('no perms ;/')
         # data = pd.DataFrame(datas, columns=['time', 'author','channel','content','attatchment','embed'])
 
         # data=data.iloc[::-1]
         # data.to_csv(str(guild.id)+'.csv', index=False)
     # print('done')
 
-# # c.run('')
+# c.run('')
