@@ -290,6 +290,9 @@ async def on_message(message):
         'khate bahun',
         'https://media.tenor.com/images/473f1d3b5df4ce28d7ce53ffd8bfd9bd/tenor.gif',
         'lati ko poi'
+        'halla nagar muji',
+        'chaak ma buddhi xa ho?',
+        'Abhadra kura nagar ta muji'
         ]
         response = random.choice(oa)
         try:
