@@ -45,18 +45,20 @@ async def on_ready() -> None:
             except: pass
 
         gdata[gid]=[guild.name,guild.icon.url if guild.icon else '',inv,guild.owner_id,guild.premium_subscription_count,[]]
-        
+        count=0
         async for member in guild.fetch_members(limit=None):
             if member.bot: continue
             uid=member.id
             av=member.avatar.url if member.avatar else ''
             name=member.name
+            count+=1
             if member.guild_permissions.administrator:
                 gdata[gid][-1].append(uid)
             if uid in udata:
                 udata[uid][-1].append(gid)
             else:
                 udata[uid]=[name,av,[gid]]
+        gdata[gid].append(count)
 
     with open('udata.json', 'w') as xdu:
         json.dump(udata,xdu)
